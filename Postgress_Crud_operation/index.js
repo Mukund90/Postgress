@@ -3,7 +3,7 @@ const {Client} = require('pg')
 const Getdata = async ()=>
 {
     try{
-        const client = new Client("postgresql://todos_owner:ZJRB2ef9CvkN@ep-fancy-shadow-a4z0aqru.us-east-1.aws.neon.tech/users?sslmode=require");
+        const client = new Client(process.env.postgress_url);
         await client.connect();
         console.log('Database connected sucressfully!');
         return client;
